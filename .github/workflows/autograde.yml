@@ -3,7 +3,7 @@ name: Auto Grading
 on: [push]
 
 jobs:
-  test:
+  grade:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,6 +15,5 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Run Tests
-        run: mvn test
-
+      - name: Run Teacher Tests
+        run: mvn -Dtest=TeacherGradingTest test
